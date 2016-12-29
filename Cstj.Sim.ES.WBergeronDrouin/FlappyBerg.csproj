@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98747109-1120-47E3-8DAF-E7ADD837153D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlappyBerg</RootNamespace>
+    <AssemblyName>FlappyBerg</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://flappyberg.com/download/</InstallUrl>
+    <MinimumRequiredVersion>1.0.0.1</MinimumRequiredVersion>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>517E55B666D1803C78F779E5040AB0F5AA5B5508</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Cstj.Sim.ES.WBergeronDrouin_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Logic\RotatedRectangle.cs" />
+    <Compile Include="ScoreLogic\Leaderboards.cs" />
+    <Compile Include="ScoreLogic\ScoreEntry.cs" />
+    <Compile Include="Screens\LeaderboardsScreen.cs" />
+    <Compile Include="Screens\HelpScreen.cs" />
+    <Compile Include="Screens\ScoreHandlingScreen.cs" />
+    <Compile Include="Sprites\GroundTileSprite.cs" />
+    <Compile Include="Sprites\InGameMenuItem.cs" />
+    <Compile Include="Sprites\MenuItemSprite.cs" />
+    <Compile Include="FlappyBerg.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\GameScreen.cs" />
+    <Compile Include="Screens\MainMenuScreen.cs" />
+    <Compile Include="Sprites\BirdSprite.cs" />
+    <Compile Include="Metiers\SpecialWall.cs" />
+    <Compile Include="Metiers\Wall.cs" />
+    <Compile Include="Sprites\WallSprite.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Sounds\Death.wav" />
+    <Content Include="Content\Sounds\Jump.wav" />
+    <Content Include="Content\Sounds\Jump2.wav" />
+    <Content Include="Content\Sounds\PowerDown.wav" />
+    <Content Include="Content\Sounds\PowerUp.wav" />
+    <Content Include="Content\Sounds\Punch.wav" />
+    <Content Include="Content\Sounds\Score.wav" />
+    <Content Include="Content\Sprites\AideSpriteSheet.png" />
+    <Content Include="Content\Sprites\Background.jpg" />
+    <Content Include="Content\Sprites\BirdSpriteSheet.png" />
+    <Content Include="Content\Sprites\ClassementBackground.jpg" />
+    <Content Include="Content\Sprites\ClassementSpriteSheet.png" />
+    <Content Include="Content\Sprites\ConnectionError.png" />
+    <Content Include="Content\Sprites\Ground-tile.png" />
+    <Content Include="Content\Sprites\HelpScreenBackground.png" />
+    <Content Include="Content\Sprites\JouerSpriteSheet.png" />
+    <Content Include="Content\Sprites\LeaveGamePrompt.png" />
+    <Content Include="Content\Sprites\MainMenuBackground.jpg" />
+    <Content Include="Content\Sprites\NonSpriteSheet.png" />
+    <Content Include="Content\Sprites\OuiSpriteSheet.png" />
+    <Content Include="Content\Sprites\Pipe.png" />
+    <Content Include="Content\Sprites\Pipe_power-down.png" />
+    <Content Include="Content\Sprites\Pipe_power-up.png" />
+    <Content Include="Content\Sprites\PublishScorePrompt.png" />
+    <Content Include="Content\Sprites\ScoreAlreadyPublished.png" />
+    <Content Include="Content\Sprites\ScoreHandlingBackground.png" />
+    <Content Include="Content\Sprites\ScoreHandlingSuccess.png" />
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MonoGame.Tools\MonoGame.Tools.csproj">
+      <Project>{e3a5599f-83a2-4505-818e-e457d65a57a9}</Project>
+      <Name>MonoGame.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Fonts\Arial14.spritefont">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Content\Fonts\Arial8.spritefont" />
+    <None Include="Content\Fonts\ScoreSmall.spritefont" />
+    <None Include="Content\Fonts\Score.spritefont" />
+    <None Include="FlappyBerg_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
